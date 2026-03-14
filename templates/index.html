@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Doctor | Prototype</title>
+    <!-- Use specific style layout -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🌱 AI Crop Doctor</h1>
+            <p>Upload a leaf image to detect diseases instantly</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <div class="upload-section" id="upload-section">
+                <div class="upload-zone" id="drop-zone">
+                    <div class="upload-icon">📁</div>
+                    <h3>Drag & Drop Leaf Image</h3>
+                    <p>or</p>
+                    <label for="file-input" class="btn btn-primary">Browse Files</label>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+                
+                <!-- Preview area hidden initially -->
+                <div class="preview-area hidden" id="preview-area">
+                    <img id="image-preview" src="" alt="Selected Leaf">
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="btn-cancel">Cancel</button>
+                        <button class="btn btn-primary" id="btn-scan">Scan Leaf</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state hidden" id="loading-state">
+                <div class="spinner"></div>
+                <p>Analyzing image with PlantVillage AI Model...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section hidden" id="results-section">
+                <h2>Diagnostic Results</h2>
+                
+                <div class="result-card">
+                    <div class="result-header">
+                        <span class="status-indicator"></span>
+                        <h3 id="disease-name">Disease Name</h3>
+                    </div>
+                    
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidence-fill"></div>
+                    </div>
+                    <p class="confidence-text">Confidence: <span id="confidence-text">0</span>%</p>
+                    
+                    <div class="treatment-info">
+                        <h4>Recommended Treatment</h4>
+                        <ul id="treatment-list">
+                            <!-- Populated dynamically via JS -->
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-full" id="btn-new-scan">Scan Another Leaf</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

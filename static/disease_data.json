@@ -1,0 +1,44 @@
+{
+    "Healthy":{
+        "treatments":[
+            "Maintain optimal watering schedules",
+            "Ensure adequate sunlight",
+            "Monitor regularly for pests"
+        ]
+    },
+    "Early Blight":{
+        "treatments":[
+            "Apply copper-based fungicides",
+            "Remove infected leaves immediately",
+            "Improve air circulation around plants"
+        ]
+    },
+    "Late Blight":{
+        "treatments":[
+            "Apply chlorothalonil or copper sprays",
+            "Avoid overhead watering",
+            "Destroy infected plants to prevent spread"
+        ]
+    },
+    "Powdery Mildew":{
+        "treatments":[
+            "Apply sulfur or neem oil",
+            "Increase spacing between plants",
+            "Water at the base of the plant only"
+        ]
+    },
+    "Rust":{
+        "treatments":[
+            "Spray with appropriate fungicides",
+            "Remove and destroy infected plant debris",
+            "Use rust-resistant varieties if possible"
+        ]
+    },
+    "Default":{
+        "treatments":[
+            "Isolate the plant to prevent potential spread",
+            "Consult a local agricultural extension office",
+            "Take clear photos and note environmental conditions"
+        ]
+    }
+}

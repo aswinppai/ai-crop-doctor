@@ -1,0 +1,58 @@
+Starting AI Crop Doctor Prototype API...
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.2.15:5000
+Press CTRL+C to quit
+2026-03-14 14:22:09.072713: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-03-14 14:22:09.101722: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-14 14:22:09.101983: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-14 14:22:09.104449: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-14 14:22:09.109954: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-03-14 14:22:09.110469: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-14 14:22:09.793424: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.2
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[Model] Received image of shape: (1, 28, 28, 3)
+[Model] Running AI inference...
+[Model] Loading PlantVillage H5 model...
+[Model] Model loaded successfully.
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 97ms/step
+127.0.0.1 - - [14/Mar/2026 14:22:10] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:22:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:22:14] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [14/Mar/2026 14:22:14] "GET /static/script.js HTTP/1.1" 304 -
+[Model] Received image of shape: (1, 28, 28, 3)
+[Model] Running AI inference...
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 29ms/step
+127.0.0.1 - - [14/Mar/2026 14:22:19] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:22:19] "GET /static/disease_data.json HTTP/1.1" 200 -
+[Model] Received image of shape: (1, 28, 28, 3)
+[Model] Running AI inference...
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 31ms/step
+127.0.0.1 - - [14/Mar/2026 14:22:41] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:22:41] "GET /static/disease_data.json HTTP/1.1" 304 -
+[Model] Received image of shape: (1, 28, 28, 3)
+[Model] Running AI inference...
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+127.0.0.1 - - [14/Mar/2026 14:23:41] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:23:41] "GET /static/disease_data.json HTTP/1.1" 304 -
+127.0.0.1 - - [14/Mar/2026 14:24:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:24:36] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [14/Mar/2026 14:24:36] "GET /static/script.js HTTP/1.1" 304 -
+[Model] Received image of shape: (1, 28, 28, 3)
+[Model] Running AI inference...
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 31ms/step
+127.0.0.1 - - [14/Mar/2026 14:24:42] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:24:42] "GET /static/disease_data.json HTTP/1.1" 304 -
+127.0.0.1 - - [14/Mar/2026 14:33:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:33:14] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [14/Mar/2026 14:33:14] "GET /static/script.js HTTP/1.1" 304 -
+[Model] Received image of shape: (1, 28, 28, 3)
+[Model] Running AI inference...
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 32ms/step
+127.0.0.1 - - [14/Mar/2026 14:33:20] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2026 14:33:20] "GET /static/disease_data.json HTTP/1.1" 304 -

@@ -15,7 +15,15 @@ def home():
     """
     return render_template('index.html')
 
+# Quick Test Route
+@app.route('/test')
+def test():
+    """
+    Simple route to verify the server is running.
+    """
+    return "Server is working!"
+
 if __name__ == '__main__':
     # Start server locally
     print("Starting AI Crop Doctor Prototype API...")
-    app.run(debug=True, port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)

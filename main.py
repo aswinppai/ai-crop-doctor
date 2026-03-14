@@ -24,6 +24,22 @@ def test():
     """
     return "Server is working!"
 
+@app.route('/dashboard')
+@app.route('/weather.html')
+def dashboard():
+    """
+    Serve the agricultural intelligence dashboard.
+    """
+    return render_template('dashboard.html')
+
+@app.route('/fertilizer.html')
+def fertilizer():
+    return "<h1>Fertilizer Suggestions (Coming Soon)</h1><a href='/'>Back to Home</a>"
+
+@app.route('/cropcare.html')
+def cropcare():
+    return "<h1>Crop Care Plans (Coming Soon)</h1><a href='/'>Back to Home</a>"
+
 if __name__ == '__main__':
     # Start server
     print("Starting AI Crop Doctor Prototype API...")

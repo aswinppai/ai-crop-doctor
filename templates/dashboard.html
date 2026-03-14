@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CROP Dr. Dashboard</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Header & Search Area -->
+        <header class="dashboard-header">
+            <a href="/" style="text-decoration: none;">
+                <div class="logo">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h1>AI CROP Dr.</h1>
+                </div>
+            </a>
+            
+            <div class="controls">
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="location" placeholder="Enter Region or City (e.g., Delhi)">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fa-solid fa-wheat-awn"></i>
+                    <select id="crop">
+                        <optgroup label="Cereals & Grains">
+                            <option value="Rice">Rice</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="Maize">Maize (Corn)</option>
+                            <option value="Barley">Barley</option>
+                            <option value="Sorghum">Sorghum</option>
+                            <option value="Millet">Millet</option>
+                        </optgroup>
+                        <optgroup label="Vegetables">
+                            <option value="Tomato">Tomato</option>
+                            <option value="Potato">Potato</option>
+                            <option value="Onion">Onion</option>
+                            <option value="Cabbage">Cabbage</option>
+                            <option value="Carrot">Carrot</option>
+                            <option value="Spinach">Spinach</option>
+                            <option value="Broccoli">Broccoli</option>
+                        </optgroup>
+                        <optgroup label="Fruits">
+                            <option value="Apple">Apple</option>
+                            <option value="Banana">Banana</option>
+                            <option value="Grapes">Grapes</option>
+                            <option value="Mango">Mango</option>
+                            <option value="Orange">Orange (Citrus)</option>
+                            <option value="Citrus">Citrus (General)</option>
+                            <option value="Papaya">Papaya</option>
+                        </optgroup>
+                        <optgroup label="Cash Crops & Others">
+                            <option value="Cotton">Cotton</option>
+                            <option value="Sugarcane">Sugarcane</option>
+                            <option value="Soybean">Soybean</option>
+                            <option value="Coffee">Coffee</option>
+                            <option value="Tea">Tea</option>
+                            <option value="Tobacco">Tobacco</option>
+                            <option value="Peanut">Peanut</option>
+                            <option value="Sunflower">Sunflower</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <button id="analyzeBtn" class="primary-btn">Analyze Data</button>
+            </div>
+        </header>
+
+        <!-- Loader -->
+        <div id="loader" class="loader-container">
+            <div class="spinner"></div>
+            <p>Analyzing Agricultural Data...</p>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-content" id="resultsDashboard">
+            
+            <!-- Top Row: Main Metrics -->
+            <section class="metrics-grid">
+                
+                <!-- Climate Pulse Card -->
+                <div class="metric-card gradient-blue">
+                    <div class="card-header">
+                        <h2>Climate Pulse</h2>
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="main-stat">
+                            <span id="temp">--°C</span>
+                        </div>
+                        <div class="sub-stats">
+                            <div><i class="fa-solid fa-droplet"></i> Humidity: <span id="humidity">--%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rain Radar Card -->
+                <div class="metric-card gradient-teal">
+                    <div class="card-header">
+                        <h2>Rain Radar</h2>
+                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="main-stat">
+                            <span id="rainfall">--mm</span>
+                        </div>
+                        <div class="sub-stats">
+                            <div>Expected Today</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- Middle Row: Agricultural Intelligence -->
+            <section class="intelligence-grid">
+                
+                <!-- Crop Guard Card -->
+                <div class="intel-card">
+                    <div class="card-header">
+                        <div class="header-title">
+                            <div class="card-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                            <h2>Crop Guard</h2>
+                        </div>
+                        <span class="badge" id="diseaseRisk">--</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="intel-desc">Disease Risk Analysis</p>
+                        <div class="alert-box">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span id="cropAlert">Awaiting data...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AquaSmart Card -->
+                <div class="intel-card">
+                    <div class="card-header">
+                        <div class="header-title">
+                            <div class="card-icon blue"><i class="fa-solid fa-faucet-drip"></i></div>
+                            <h2>AquaSmart</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="intel-desc">Irrigation Recommendations</p>
+                        <div class="advice-box">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span id="irrigation">Awaiting data...</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- Bottom Row: 7-Day Forecast -->
+            <section class="forecast-section">
+                <h2>7-Day Weather Forecast</h2>
+                <div class="forecast-container" id="forecast">
+                    <!-- Forecast items will be injected here via JS -->
+                    <div class="forecast-placeholder">Enter a location to see forecast</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
